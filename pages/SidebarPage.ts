@@ -23,9 +23,14 @@ export class SidebarPage {
     this.sendNewNotificationLink = page.getByRole('link', { name: ' Send New Notification' });
   }
 
-  async goToDashboard() {
+async goToDashboard() {
+  const classAttr = await this.dashboardLink.getAttribute('class');
+  const isAlreadyActive = classAttr?.includes('active');
+
+  if (!isAlreadyActive) {
     await this.dashboardLink.click();
   }
+}
 
   async goToInstitutes() {
     await this.institutesMenu.click();
