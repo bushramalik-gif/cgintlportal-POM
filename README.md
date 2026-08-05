@@ -19,4 +19,5 @@ npx playwright show-report
 GitHub Actions automatically runs tests on push.
 
 ## Repository
-<repo link>
+
+https://github.com/bushramalik-gif/cgintlportal-POM
