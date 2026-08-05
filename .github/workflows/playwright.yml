@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+      
+  schedule:
+   - cron: '18 05 * * *'
+
 
   pull_request:
     branches:
