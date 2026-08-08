@@ -16,7 +16,7 @@ const config: PlaywrightTestConfig = defineConfig({
 
   use: {
         headless: !!process.env.CI,
-    viewport: { width: 1366, height: 768 },
+    viewport: { width: 1920, height: 1080 },
     video: 'on',
     screenshot: 'on',
     trace: 'on',
