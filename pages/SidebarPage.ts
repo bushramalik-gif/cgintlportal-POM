@@ -32,11 +32,17 @@ async goToDashboard() {
   }
 }
 
-  async goToInstitutes() {
+async goToInstitutes() {
+  // Check karein agar submenu already visible hai
+  const isVisible = await this.institutesSubLink.isVisible().catch(() => false);
+  
+  if (!isVisible) {
     await this.institutesMenu.click();
-    await this.institutesSubLink.waitFor({ state: 'visible' });
-    await this.institutesSubLink.click();
+    await this.institutesSubLink.waitFor({ state: 'visible', timeout: 30000 }); // timeout barhaya
   }
+  
+  await this.institutesSubLink.click();
+}
 
   async goToAcademics() {
     await this.academicsLink.click();
